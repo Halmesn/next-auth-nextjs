@@ -18,7 +18,7 @@
 
 ## About The Project
 
-For personal future ref only.
+This project is for my personal reference and use only.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
