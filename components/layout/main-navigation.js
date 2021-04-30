@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useSession } from 'next-auth/client';
+import { useSession, signOut } from 'next-auth/client';
 
 import classes from './main-navigation.module.css';
 
@@ -27,7 +27,13 @@ function MainNavigation() {
                 <Link href="/profile">Profile</Link>
               </li>
               <li>
-                <button>Logout</button>
+                <button
+                  onClick={() => {
+                    signOut();
+                  }}
+                >
+                  Logout
+                </button>
               </li>
             </>
           )}
