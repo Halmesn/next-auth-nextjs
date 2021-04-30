@@ -1,5 +1,9 @@
 import { hashPassword } from 'utilities/auth';
-import { connectDatabase, insertDocument } from 'utilities/MongoDb';
+import {
+  connectDatabase,
+  getAllDocument,
+  insertDocument,
+} from 'utilities/MongoDb';
 
 async function handler(req, res) {
   const { email, password } = req.body;
@@ -21,6 +25,16 @@ async function handler(req, res) {
   }
 
   if (req.method === 'POST') {
+    const isExisting = client
+      .db()
+      .collection('users')
+      .findOne({ email: email });
+    if (isExisting) {
+      res.status(422).json({ message: 'User exists already!' });
+      client.close();
+      return;
+    }
+
     const formData = {
       email,
       password: hashedPassword,
@@ -30,7 +44,7 @@ async function handler(req, res) {
       await insertDocument('users', client, formData);
       res.status(201).json({ message: 'Successfully signed up!' });
     } catch (error) {
-      res.status(500).json({ error: 'Signing up failed' });
+      res.status(500).json({ message: 'Signing up failed' });
     }
   }
 
