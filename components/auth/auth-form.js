@@ -48,6 +48,7 @@ function AuthForm() {
       redirect: false,
       ...formData,
     });
+    console.log(result);
     if (!result.error) {
       router.replace('/profile');
     }
