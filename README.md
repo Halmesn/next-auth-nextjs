@@ -5,7 +5,7 @@
     <img src="https://github.com/Halmesn/NextEvent/blob/main/public/images/nextjs.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">NextBlog</h3>
+  <h3 align="center">NextAuth</h3>
 
   <p align="center">
     A project I did when I was learning this <a href="https://www.udemy.com/course/nextjs-react-the-complete-guide/">
