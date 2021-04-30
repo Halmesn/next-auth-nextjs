@@ -1,9 +1,5 @@
 import { hashPassword } from 'utilities/auth';
-import {
-  connectDatabase,
-  getAllDocument,
-  insertDocument,
-} from 'utilities/MongoDb';
+import { connectDatabase, insertDocument } from 'utilities/MongoDb';
 
 async function handler(req, res) {
   const { email, password } = req.body;
@@ -25,7 +21,7 @@ async function handler(req, res) {
   }
 
   if (req.method === 'POST') {
-    const isExisting = client
+    const isExisting = await client
       .db()
       .collection('users')
       .findOne({ email: email });

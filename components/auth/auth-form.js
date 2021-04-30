@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { signIn } from 'next-auth/client';
 import classes from './auth-form.module.css';
 
 function AuthForm() {
@@ -38,7 +39,14 @@ function AuthForm() {
       } catch (error) {
         console.log(error.message);
       }
+      return;
     }
+
+    const result = await signIn('credentials', {
+      redirect: false,
+      ...formData,
+    });
+    console.log(result);
   };
 
   return (
