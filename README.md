@@ -18,7 +18,7 @@
 
 ## About The Project
 
-This project is for my personal reference and use only.
+This project serves the purpose of future reference.(In other words, if I forget how to implement certain feature in the future I can take a look here!)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
